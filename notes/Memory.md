@@ -18,6 +18,12 @@ Absolute line break offsets will be stored in a continuous array inside a growab
 
 This array has the same lifetime as File Data.
 
+# Horizontal Breaks
+
+Horizontal breaks are character offsets inside each line that indicate which character begins and is inside, even if partially, a vertical ruler / horizontal guide. This is useful for constraining the multiple line query not just by the number of lines on the vertical axis but also by the number of breaks (which are spaced evenly) on the horizontal axis.
+
+This is a way of asking for a 2-dimensional view into a file which is what the renderer needs in the end.
+
 # File Pieces
 
 The current contents of a file will be described by an array of pairs of views/spans into File Data and line break array.
