@@ -30,3 +30,11 @@ struct Piece {
     uint64_t linebreaks_count;
 };
 ```
+
+# File API
+
+The file module will hold a single file at a time. It will allow reading its contents line by line and inserting or deleting text into/from lines.
+
+Ideally, the program should support reading files of *any* size which means only a small portion of the file will be present in memory. The file still needs to be read completely at startup to find all line breaks and calculate the lower bound of the text. This initial skimming through a file must be done asynchronously. After that the program will have an array of all line breaks in the file. The issue is, it may not be able to keep this array in memory, if the file contained 10 gigs of newlines. But I think I should leave this feature and non-monospaced fonts for later.
+
+So, first part of the interface - reading lines. It will be primarily used by the renderer which will always request multiple consequtive lines at a time. Moreover it would ideally need only a short (100-150 characters) span into each line. Long lines can be split into multiple pieces.
