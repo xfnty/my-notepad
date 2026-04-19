@@ -1,0 +1,7 @@
+LIBRARY shlwapi.dll
+
+EXPORTS
+wnsprintfW
+wvnsprintfW
+PathFindFileNameA
+PathFindFileNameW

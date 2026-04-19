@@ -1,0 +1,4 @@
+LIBRARY comctl32.dll
+
+EXPORTS
+InitCommonControls

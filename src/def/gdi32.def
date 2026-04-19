@@ -1,0 +1,8 @@
+LIBRARY gdi32.dll
+
+EXPORTS
+GetStockObject
+ChoosePixelFormat
+DescribePixelFormat
+SetPixelFormat
+SwapBuffers
